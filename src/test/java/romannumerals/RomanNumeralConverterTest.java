@@ -93,9 +93,19 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
-    public void test40(){
+    public void test40s(){
         assertEquals(40,rnConverter.getDecimalNumberFor("XL"));
         assertEquals(44,rnConverter.getDecimalNumberFor("XLIV"));
         assertEquals(45,rnConverter.getDecimalNumberFor("XLV"));
+        assertEquals(49,rnConverter.getDecimalNumberFor("XLIX"));
+    }
+
+    @Test
+    public void test90s(){
+        assertEquals(90,rnConverter.getDecimalNumberFor("XC"));
+        assertEquals(94,rnConverter.getDecimalNumberFor("XCIV"));
+        assertEquals(98,rnConverter.getDecimalNumberFor("XCVIII"));
+        assertEquals(99,rnConverter.getDecimalNumberFor("XCIX"));
+        assertEquals(100,rnConverter.getDecimalNumberFor("C"));
     }
 }
