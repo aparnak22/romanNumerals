@@ -1,24 +1,37 @@
 package com.techreturners.romannumerals;
 
+/**
+ * The RomanNumeralConverter class has method to convert a given Roman Numeral to its decimal number.
+ */
 public class RomanNumeralConverter {
 
-    public static int getDecimalNumberFor(String romanNumeral) {
+    /**
+     * Convert the given roman numeral to its decimal number
+     * This method does not check for valid combinations of the letters
+     * such as if a letter is repeated more than 3 times or
+     * that the letters V,L,D are not repeated
+     *
+     * @param romanNumeral  The Roman numeral
+     * @return the equivalent decimal number
+     */
+    public int getDecimalNumberFor(String romanNumeral) {
 
         int length = romanNumeral.length();
-
+        romanNumeral = romanNumeral.toUpperCase();
       /*
            When a letter of smaller value is to the RIGHT of the letter with larger value then
            the smaller value is subtracted from the number value else it is added.
            The following code reads the roman numerals from left to right.
        */
-            int index = length - 1;
+        int index = length - 1; // Use index to read the romanNumberal from the rightmost letter
 
-            int numberValue = 0; //The decimal value holder
-            int previousDigit = 0; //The letter to the right of the current digit
+        int previousDigit = 0; //The letter to the right of the current digit
 
-            int currentDigit ;
+        int currentDigit ;
 
-            while (index >= 0){
+        //The decimal value holder
+        int numberValue = 0;
+        while (index >= 0){
 
                 currentDigit = getOneDigit(romanNumeral.charAt(index));
 
@@ -43,13 +56,15 @@ public class RomanNumeralConverter {
     /*
     Get the decimal equivalent for one digit roman numeral - straightforward.
      */
-    private static int getOneDigit(char romanNumeralChar) {
+    private int getOneDigit(char romanNumeralChar) {
         return switch (romanNumeralChar) {
             case 'I' -> 1;
             case 'V' -> 5;
             case 'X' -> 10;
             case 'L' -> 50;
             case 'C' -> 100;
+            case 'D' -> 500;
+            case 'M' -> 1000;
             default -> -1;
         };
     }

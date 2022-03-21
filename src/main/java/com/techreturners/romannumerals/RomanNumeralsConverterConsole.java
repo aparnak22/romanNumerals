@@ -9,7 +9,10 @@ public class RomanNumeralsConverterConsole {
         Scanner scanner = new Scanner(new InputStreamReader(System.in));
         System.out.println("Please enter a Roman Numeral");
         String rnInput = scanner.nextLine();
-        int number = RomanNumeralConverter.getDecimalNumberFor(rnInput);
+        int number = new RomanNumeralConverter().getDecimalNumberFor(rnInput);
+        if (number == -1){
+            System.out.println("Invalid Roman Numeral entered");
+        }
         System.out.println("You converted the Roman Numeral " + rnInput + " to the number " + number);
 
     }
