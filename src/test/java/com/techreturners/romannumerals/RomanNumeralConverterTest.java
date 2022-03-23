@@ -110,6 +110,15 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
+    public void testLargeRomanNumeral(){
+        assertEquals(88,rnConverter.getDecimalNumberFor("LXXXVIII"));
+        assertEquals(148,rnConverter.getDecimalNumberFor("CXLVIII"));
+        assertEquals(1000,rnConverter.getDecimalNumberFor("M"));
+        assertEquals(1380,rnConverter.getDecimalNumberFor("MCCCLXXX"));
+
+    }
+
+    @Test
     public void testMaxRomanNumeral(){
         assertEquals(3999,rnConverter.getDecimalNumberFor("MMMCMXCIX"));
     }

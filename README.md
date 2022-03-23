@@ -12,7 +12,7 @@ Run the com.techreturners.romannumerals.RomanNumeralsConverterConsole java class
 start the application and follow the on screen instructions. 
 
 ## Features 
-The application can convert up to largest Roman numeral possible which is 3999. 
+The application can convert up to largest Roman numeral possible without the overline which is 3999. 
 
 ## Limitations
 This method does not check for valid combinations of the letters
