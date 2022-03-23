@@ -19,11 +19,11 @@ public class RomanNumeralConverter {
         int length = romanNumeral.length();
         romanNumeral = romanNumeral.toUpperCase();
       /*
-           When a letter of smaller value is to the RIGHT of the letter with larger value then
+           When a letter of smaller value is to the LEFT of the letter with larger value then
            the smaller value is subtracted from the number value else it is added.
-           The following code reads the roman numerals from left to right.
+           The following code reads the roman numerals from right to left.
        */
-        int index = length - 1; // Use index to read the romanNumberal from the rightmost letter
+        int index = length - 1; // Use index to read the roman Numeral from the rightmost letter
 
         int previousDigit = 0; //The letter to the right of the current digit
 
@@ -33,9 +33,9 @@ public class RomanNumeralConverter {
         int numberValue = 0;
         while (index >= 0){
 
-                currentDigit = getOneDigit(romanNumeral.charAt(index));
+                currentDigit = getNumericValueForLetter(romanNumeral.charAt(index));
 
-                if (currentDigit == -1) {
+                if (currentDigit == -1) { //Invalid/Unexpected letter for a roman numeral
                     return -1;
                 }
 
@@ -56,7 +56,7 @@ public class RomanNumeralConverter {
     /*
     Get the decimal equivalent for one digit roman numeral - straightforward.
      */
-    private int getOneDigit(char romanNumeralChar) {
+    private int getNumericValueForLetter(char romanNumeralChar) {
         return switch (romanNumeralChar) {
             case 'I' -> 1;
             case 'V' -> 5;
