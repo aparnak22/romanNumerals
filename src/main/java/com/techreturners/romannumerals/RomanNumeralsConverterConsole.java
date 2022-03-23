@@ -13,7 +13,7 @@ public class RomanNumeralsConverterConsole {
         if (number == -1){
             System.out.println("Invalid Roman Numeral entered");
         }
-        System.out.println("You converted the Roman Numeral " + rnInput + " to the number " + number);
+        else System.out.println("You converted the Roman Numeral " + rnInput + " to the number " + number);
 
     }
 }
